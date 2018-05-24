@@ -1,5 +1,16 @@
-# pymongo-example-code
+# Pymongo Transactions Example Code
+
 Example code showing the MongoDB Python driver (Pymongo) in action.
+
+* setup.sh : Configure the enviroment including downloading MongoDB
+etc.
+* mongod.sh : Start and stop MongoDB once setup.sh is run (mongodb.sh
+start|stop).
+* transaction_main.py : Run a set of writes with and without transactions run ```python transactions_main.py -h``` for help.
+* watch_collection.py : Use a mongodb changstream to watch collections
+as they change when transactions_main.py is running
+* featurecompatibility.py : check and or set feature compatibility for
+  th database (needs to be set to "4.0" for transactions)
 
 ## Setting up the transactions code
 The first example is for MongoDB 4.0 and shows the transactions code
