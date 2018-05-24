@@ -22,12 +22,13 @@ if __name__ == "__main__" :
     watch_cursor = collection.watch()
     output = database["watcher"]
     try:
-        print( "Watching: {}".format(args.watch))
+        print( "Watching: {}\n".format(args.watch))
         for d in watch_cursor:
-            print( "time now:{}".format(datetime.utcnow()))
+            print("time now     : {}".format(datetime.utcnow()))
             print("cluster time : {}".format(d["clusterTime"].as_datetime()))
-            print("collection   : {}".format(d["ns"]))
+            print("collection   : {}.{}".format(d["ns"]["db"], d["ns"]["coll"] ))
             print("seat         : {}".format(d["fullDocument"]["seat"]) )
+            print("")
             #print(d)
             output.insert_one(d)
     except KeyboardInterrupt:

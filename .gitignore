@@ -105,3 +105,8 @@ venv.bak/
 
 # pycharm
 .idea
+
+#localfiles
+mongodb-osx-ssl-x86_64-4.0.0-rc0.tgz
+mongodb-osx-x86_64-4.0.0-rc0
+data
