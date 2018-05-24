@@ -7,7 +7,7 @@ if __name__ == "__main__" :
 
     parser = ArgumentParser()
 
-    parser.add_argument( "--host", default="mongodb://localhost:27017/?replicaSet=txntest", help="mongodb URI for connecting to server [default: %(default)s]")
+    parser.add_argument( "--host", default="mongodb://localhost:27100/?replicaSet=txntest", help="mongodb URI for connecting to server [default: %(default)s]")
     parser.add_argument( "--watch", default="test.test", help="Watch <database.colection> [default: %(default)s]")
 
     args = parser.parse_args()

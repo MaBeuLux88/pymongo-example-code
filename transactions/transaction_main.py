@@ -33,7 +33,7 @@ def txn_sequence(seats, payments, seat_no, delay, session=None):
 if __name__ == "__main__" :
 
     parser=ArgumentParser()
-    parser.add_argument("--host", default="mongodb://localhost:27017/?replicaSet=txntest" , help="MongoDB URI [default: %(default)s]")
+    parser.add_argument("--host", default="mongodb://localhost:27100/?replicaSet=txntest" , help="MongoDB URI [default: %(default)s]")
     parser.add_argument("--usetxns", default=False, action="store_true", help="Use transactions [default: %(default)s]")
     parser.add_argument("--delay", default=1.0, type=float, help="Delay between two insertion events [default: %(default)s]")
     parser.add_argument("--iterations", default=3, type=int, help="Run  %(default)s iterations" )

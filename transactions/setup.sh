@@ -23,17 +23,17 @@ source venv/bin/activate
 
 # required to simplying installing replica sets
 
-if ! python -c "import mtools" ;then
+if ! python -c "import mtools" 2> /dev/null ;then
     pip install mtools
 fi
 
-if  ! python -c "import psutil" ;then
+if  ! python -c "import psutil" 2> /dev/null ;then
     pip install psutil
 fi
 
 #pymongo beta
 
-if ! python -c "import pymongo" ;then
+if ! python -c "import pymongo" 2> /dev/null ;then
     python -m pip install https://github.com/mongodb/mongo-python-driver/archive/3.7.0b0.tar.gz
 fi
 

@@ -9,6 +9,6 @@ elif [ -d "$MONGOD_BINDIR" ]; then
   if [ -d "data/txntest" ]; then
     mlaunch start
   else
-    mlaunch init --replicaset --name "txntest"
+    mlaunch init --port 27100 --replicaset --name "txntest"
   fi
 fi

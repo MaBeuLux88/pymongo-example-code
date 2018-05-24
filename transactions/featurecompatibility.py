@@ -8,7 +8,7 @@ if __name__ =="__main__" :
 
     parser=ArgumentParser()
 
-    parser.add_argument("--host", default="mongodb://localhost:27017/?replicaSet=txntest" , help="MongoDB URI [default: %(default)s]")
+    parser.add_argument("--host", default="mongodb://localhost:27100/?replicaSet=txntest" , help="MongoDB URI [default: %(default)s]")
     parser.add_argument("--feature_version",help="Server the server featureCompatibilityVersion (also try '4.0' for transactions [default: %(default)s]")
 
     args=parser.parse_args()
