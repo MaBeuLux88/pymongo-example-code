@@ -29,7 +29,7 @@ All this is achieved using a single ```setup.sh``` script.
 
 <pre>
 <b>cd transactions</b>
-<b>./setup.sh**</b>
+<b>./setup.sh</b>
 
 <b>python transaction_main.py -h</b>
 usage: transaction_main.py [-h] [--host HOST] [--usetxns] [--delay DELAY]
@@ -96,11 +96,11 @@ Paying 500 for seat '3A'
 ```
 
 To actually see the effect of transactions we need to watch what is
-happening inside the collections ```PYTHON_TXNS_EXAMPLE.seats``` ```
+happening inside the collections ```PYTHON_TXNS_EXAMPLE.seats``` and ```
 PYTHON_TXNS_EXAMPLE.payments```.
 
 We can do this with ```watch_collection.py```. The uses [MongoDB
-changestreams](https://docs.mongodb.com/manual/changeStreams/)
+change streams](https://docs.mongodb.com/manual/changeStreams/)
 to see whats happening inside a collection in real-time. We need run
 two of these in parallel so its best to line them up side by side.
 
@@ -163,4 +163,4 @@ delays reported by the ```watch_collection.py``` programs.
 Now if we run the same program with the ```--usetxns``` we will see
 that the change streams become synchronised because both collections
 only see the changes when the `end_transaction()` call happens. In
-python the ```with`` clause ensures this happens.
+python the ```with``` clause ensures this happens.
