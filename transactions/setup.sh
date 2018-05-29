@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#
+# Download and install MongoDB 4.0.
+#
+# Create a python 3.6
 
 #wget or change to curl or whatever your favourite command line download tool is
 
@@ -13,6 +17,20 @@ else
     echo "Mongodb 4.0 RC0 already downloaded"
 fi
 #setup a virtualenv
+
+#
+# test for python 3.6
+
+echo "Checking python version"
+PYTHON_VERSION=`python -V 2>&1 |cut -f 2 -d ' '| cut -f 1 -d '.'` 2>&1 > /dev/null
+VER=`python -V 2>&1`
+if  [ $PYTHON_VERSION == "3" ] ;then
+    echo "Running python $VER"
+else
+    echo "Warning : This code has only been tested with Python 3.6"
+
+    echo "Warning : you are running $VER"
+fi
 
 if [ ! -d venv ];then
     echo "setup virtual env in venv"
