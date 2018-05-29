@@ -74,6 +74,9 @@ if __name__ == "__main__" :
     for i in range(1,args.iterations+1):
         if args.usetxns:
             print( "Using transactions")
+
+            # probably better outside the loop in real life
+
             with client.start_session() as s:
                 with s.start_transaction():
                     txn_sequence(seats_collection, payments_collection, i, delay, s)
